@@ -23,4 +23,16 @@ router.get("/new", function (req, res, next) {
   res.render("form", { title: "Mini Messageboard", messages: messages });
 });
 
+router.post("/new", function(req, res, next){
+
+  messages.push({
+    user: req.body.name,
+    text: req.body.message,
+    added: new Date()
+  });
+
+  res.redirect("/");
+
+})
+
 module.exports = router;
