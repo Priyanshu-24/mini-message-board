@@ -5,19 +5,21 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+
     <h1><%= title %></h1>
-    
-    <div>
+
+    <div class="container">
+
       <% messages.forEach((value,index)=>{ %>
-      <div class="container">
+      <div class="one-box">
         <p><strong>Name: </strong> <%= value.user%></p>
         <p><strong>Message: </strong> <%= value.text%></p>
         <p><strong>Date: </strong> <%= value.added%></p>
       </div>
       <%}) %>
+
+      <a href="/new">New Message</a>
+
     </div>
-
-    <a href="/new">New Message</a>
-
   </body>
 </html>
